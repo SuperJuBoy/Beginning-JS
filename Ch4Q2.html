@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chapter 4, Question 2</title>
+</head>
+<body>
+	<script>
+	var number;	
+	var startNum;
+	var endNum;
+	
+	var tt = function TimeTable(number,startNum,endNum){
+		var product = [];
+		document.write(number + "'s table from " + startNum + " to " + endNum);
+		document.write("<br>");	
+		document.write("<br>");	
+		document.write("<br>");	
+		
+			for(var j = startNum;j <= endNum; j++){
+				product[j] = number*j;
+				document.write(number + " times " + j + " equals " + product[j]);
+				document.write("<br>");	
+			}
+			document.write("<br>");	
+			document.write("<br>");	
+			document.write("<br>");	
+	};	
+	
+	function displayResults(fn,tableNum,stNum,endNum){
+		fn(tableNum,stNum,endNum);
+	}
+	
+	function enterInput(number){
+	
+		while(isNaN(number)){
+				number = parseInt(prompt("Could you please enter a valid number ?",""),10);	
+		}
+		
+		startNum = parseInt(prompt("Enter the number from which the time table should start ",""),10);
+		endNum = parseInt(prompt("Enter the number at which the time table should end ",""),10);
+	
+		while(endNum < startNum){
+			alert("The number you want to end the table at, seems to be lesser than the number you're starting at !!!");
+			endNum = parseInt(prompt("Please enter a number greater than " + startNum + " (The starting number)",""),10);
+		}
+		
+		displayResults(tt,number,startNum,endNum);
+	}
+	
+	do{	
+		entryNumber = parseInt(prompt("Time Table printer !!!, Enter the number for which you want to see the table (or enter -1 to quit)"));
+		if(entryNumber === -1){
+			continue;
+		}
+		else{
+			enterInput(entryNumber);
+		}				
+	}while(entryNumber !== -1)
+		
+	alert("Thanks for using this application. Hope you saw the expected output !!");
+			
+	</script>
+</body>
+</html>
