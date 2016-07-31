@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chapter 4, Question 1</title>
+</head>
+<body>
+	<script>		
+	function TimeTable(number,startNum,endNum){
+		var product = [];
+		document.write(number + "'s table from " + startNum + " to " + endNum);
+		document.write("<br>");	
+		document.write("<br>");	
+		document.write("<br>");	
+		
+			for(var j = startNum;j <= endNum; j++){
+				product[j] = number*j;
+				document.write(number + " times " + j + " equals " + product[j]);
+				document.write("<br>");	
+			}
+			document.write("<br>");	
+			document.write("<br>");	
+			document.write("<br>");	
+	}	
+	
+	var number = parseInt(prompt("Enter the number for which the time table should be printed ",""),10);
+	var startNum = parseInt(prompt("Enter the number from which the time table should start ",""),10);
+	var endNum = parseInt(prompt("Enter the number at which the time table should end ",""),10);
+	
+	while(endNum < startNum){
+		alert("The number you want to end the table at, seems to be lesser than the number you're starting at !!!");
+		var endNum = parseInt(prompt("Please enter a number greater than " + startNum + " (The starting number)",""),10);
+	}
+	TimeTable(number,startNum,endNum);
+	
+	</script>
+</body>
+</html>
