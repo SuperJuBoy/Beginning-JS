@@ -37,8 +37,17 @@
 		}
 		
 		startNum = parseInt(prompt("Enter the number from which the time table should start ",""),10);
+		
+		while(isNaN(startNum)){
+				startNum = parseInt(prompt("Could you please enter a valid start number ?",""),10);	
+		}
+		
 		endNum = parseInt(prompt("Enter the number at which the time table should end ",""),10);
 	
+		while(isNaN(endNum)){
+				endNum = parseInt(prompt("Could you please enter a valid end number ?",""),10);	
+		}
+		
 		while(endNum < startNum){
 			alert("The number you want to end the table at, seems to be lesser than the number you're starting at !!!");
 			endNum = parseInt(prompt("Please enter a number greater than " + startNum + " (The starting number)",""),10);
