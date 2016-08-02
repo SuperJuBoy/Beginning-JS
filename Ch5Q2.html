@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chaper 5, Question 2</title>
+</head>
+<body>
+	<script>
+		var names = [];
+		var i = 0;
+		do{
+			i++;
+			names[i] = prompt("Enter a names or press okay if you're done","");			
+		}while(names[i] !== "")
+		
+		names.sort();
+		for(var i=1;i<names.length-1;i++){
+			document.write(names[i]+"</br>");
+		}
+	</script>	
+</body>
+</html>
